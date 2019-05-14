@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>TK Feedback A3</title>
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery Validation-->
+        <script src="js/lib/jquery.validate.js"></script>
+        <!--jQuery mobile css-->
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+
+        <meta charset="utf-8">
+
+        <!--my scripts-->
+        <script src="js/TKdatabase.js"></script>
+        <script src="js/TKfeedbackDAL.js"></script>
+        <script src="js/TKglobal.js"></script>
+        <script src="js/TKfacade.js"></script>
+        <script src="js/TKutil.js"></script>
+
+        <!--my stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/TKmystyle.css">
+    </head>
+
+    <body>
+
+        <!--home page-->
+        <div id="TKHomePage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>Vote Me</h1>
+                <a href="#left-panel1" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+            <div data-role="content" class = border>
+                <div id="slogan">
+                    <img src="img/vote.png" alt="VoteIcon" class="icon" height="40%" width="50%"/>
+                    <h1 id="slogan1">Vote</h1>
+                    <h1 id="slogan2">Me</h1>
+                </div><br><br>
+                <div>
+                    <h1 class="center">We Make Voting Easy!</h1>
+                    <h3 class="center">You can choose your candidate by your student number</h3>
+                    <img src="img/voted.jpg" alt="voteImage" class="center" height="50%" width="70%"/>
+                </div>
+            </div>
+            <div data-role="panel" data-display="overlay" id="left-panel1" data-theme="b">
+                    <ul data-role="listview" data-iconpos="left" data-theme="a">
+                        <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                        <li data-icon="home"><a href="#TKHomePage"  data-rel="close" data-theme="a">Home</a></li>
+                        <li data-icon="user"><a href="#TKCandidatesPage"  data-theme="a">Candidates</a></li>
+                        <li data-icon="check"><a href="#TKAddFeedbackPage"  data-theme="a">Give Your Vote</a></li>
+                        <li data-icon="gear"><a href="#TKSettingsPage"  data-theme="a">Settings</a></li>
+                        <li data-icon="location"><a href="#TKContactPage"  data-theme="a">Contact</a></li>
+                        <li data-icon="info"><a href="#TKAboutPage"  data-theme="a">About</a></li>
+                    </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+        <!--Candidates-->
+        <div id="TKCandidatesPage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>Candidates</h1>
+                <a href="#left-panel2" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+
+            <section data-role="content" class="border">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="30%" width="30%"/>
+                <h2 align="left">Candidates</h2><br>
+                <ul id="lvAll" data-role="listview" class="ui-listview-inset">
+                    <li>
+                        <a href="#TKCan1Page" data-theme="a">
+                            <img src="img/c1.jpg" width="100%" height="100%" atl="Thor">
+                            <h2>Jackson</h2>
+                            <h2>Rodrigues</h2>
+                        </a>
+                    </li><br>
+                    <li>
+                        <a href="#TKCan2Page" data-theme="a">
+                            <img src="img/c2.jpg" width="100%" height="100%" atl="Captain America">
+                            <h2>Mobina</h2>
+                            <h2>Sama</h2>
+                        </a>
+                    </li><br>
+                    <li>
+                        <a href="#TKCan3Page" data-theme="a">
+                        <img src="img/c3.jpg" width="100%" height="100%" atl="Captain America">
+                        <h2>Julia</h2>
+                        <h2>Smith</h2>
+                        </a>
+                    </li><br>
+                    <li>
+                        <a href="#TKCan4Page" data-theme="a">
+                        <img src="img/c4.jpg" width="100%" height="100%" atl="Captain America">
+                        <h2>Nathan</h2>
+                        <h2>Bardy</h2>
+                        </a>
+                    </li>
+                </ul>
+
+            </section>
+            <div data-role="panel" data-display="overlay" id="left-panel2" data-theme="b">
+                <ul data-role="listview" data-iconpos="left" data-theme="a">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li data-icon="home"><a href="#TKHomePage"  data-theme="a">Home</a></li>
+                    <li data-icon="user"><a href="#TKCandidatesPage" data-rel="close" data-theme="a">Candidates</a></li>
+                    <li data-icon="check"><a href="#TKAddFeedbackPage"  data-theme="a">Give Your Vote</a></li>
+                    <li data-icon="gear"><a href="#TKSettingsPage"  data-theme="a">Settings</a></li>
+                    <li data-icon="location"><a href="#TKContactPage"  data-theme="a">Contact</a></li>
+                    <li data-icon="info"><a href="#TKAboutPage"  data-theme="a">About</a></li>
+                </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+        <!--Vote page-->
+        <div id="TKAddFeedbackPage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>Candidates</h1>
+                <a href="#left-panel3" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+            <section data-role="content" class="border">
+                <div>
+                    <img src="img/vote.png" alt="VoteIcon" id="icon" height="30%" width="30%"/>
+                    <h2 style="text-align: left">Choose Your Candidate:</h2>
+                </div>
+
+                <form id="TKAddForm">
+                    <select name="TKTypeAdd" id="TKTypeAdd" data-native-menu="false" data-iconpos="left">
+                       <!-- <option value="choose-one" data-placeholder="true" disabled>Choose one...</option>
+                        <option value="Jackson Rodrigues" >Jackson Rodrigues</option>
+                        <option value="Mobina Sama" >Mobina Sama</option>
+                        <option value="Julia Smith" >Julia Smith</option>
+                        <option value="Nathan Bardy" >Nathan Bardy</option>-->
+                    </select>
+                    <label for="TKStudentNum">Student Number:</label>
+                    <input type="number" id="TKStudentNum" name="TKStudentNum">
+                    <label for="TKStudentEmail">Student Email:</label>
+                    <input type="text" id="TKStudentEmail" name="TKStudentEmail">
+                    <label for="TKReviewDate">Date:</label>
+                    <input id="TKReviewDate" name="TKReviewDate" type="date" data-clear-btn="true">
+
+
+                    <button type="button" data-role="button" id="TKbtnSave" name="TKbtnSave"
+                            class="ui-btn-active" style="width:100px;">
+                        Vote
+                    </button>
+
+                </form>
+            </section>
+            <div data-role="panel" data-display="overlay" id="left-panel3" data-theme="b">
+                <ul data-role="listview" data-iconpos="left" data-theme="a">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li data-icon="home"><a href="#TKHomePage"  data-theme="a">Home</a></li>
+                    <li data-icon="user"><a href="#TKCandidatesPage"  data-theme="a">Candidates</a></li>
+                    <li data-icon="check"><a href="#TKAddFeedbackPage" data-rel="close" data-theme="a">Give Your
+                        Vote</a></li>
+                    <li data-icon="gear"><a href="#TKSettingsPage"  data-theme="a">Settings</a></li>
+                    <li data-icon="location"><a href="#TKContactPage"  data-theme="a">Contact</a></li>
+                    <li data-icon="info"><a href="#TKAboutPage"  data-theme="a">About</a></li>
+                </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+		
+        <!--Setting page-->
+        <div id="TKSettingsPage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>Setting</h1>
+                <a href="#left-panel4" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+            <section data-role="content" class="border">
+                <form id="TKdefaultForm" name="TKdefaultForm">
+                    <label for="TKDefaultReE">Default Student
+                        Email:</label>
+                    <input type="text" id="TKDefaultReE" name="TKDefaultReE" value="">
+
+                    <button type="button" data-role="button" id="TKbtnSaveDef" name="TKbtnSaveDef"
+                            class="ui-btn-active">
+                        Save Defaults
+                    </button>
+                    <!--<button type="button" data-role="button" id="TKbtnClearData" name="TKbtnClearData"
+                            data-theme="b">
+                        Clear Database
+                    </button>-->
+                </form>
+
+            </section>
+            <div data-role="panel" data-display="overlay" id="left-panel4" data-theme="b">
+                <ul data-role="listview" data-iconpos="left" data-theme="a">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li data-icon="home"><a href="#TKHomePage"  data-theme="a">Home</a></li>
+                    <li data-icon="user"><a href="#TKCandidatesPage"  data-theme="a">Candidates</a></li>
+                    <li data-icon="check"><a href="#TKAddFeedbackPage"  data-theme="a">Give Your Vote</a></li>
+                    <li data-icon="gear"><a href="#TKSettingsPage"  data-rel="close" data-theme="a">Settings</a></li>
+                    <li data-icon="location"><a href="#TKContactPage"  data-theme="a">Contact</a></li>
+                    <li data-icon="info"><a href="#TKAboutPage"  data-theme="a">About</a></li>
+                </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+        <!--Contact page-->
+        <div id="TKContactPage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>Contact</h1>
+                <a href="#left-panel6" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+            <section>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {
+                        'packages': ['map'],
+                        // Note: you will need to get a mapsApiKey for your project.
+                        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+                        'mapsApiKey': 'AIzaSyD4aAE4wPldYYbSopTxFHvb_kLC_tyeYN4 '
+                    });
+                    google.charts.setOnLoadCallback(drawMap);
+
+                    function drawMap() {
+                        // The URL of the spreadsheet to source data from.
+                        var query = new google.visualization.Query(
+                            'https://spreadsheets.google.com/pub?key=pCQbetd-CptF0r8qmCOlZGg');
+                        query.send(draw);
+                    }
+
+                    function draw(response) {
+                        if (response.isError()) {
+                            alert('Error in query');
+                        }
+
+                        var geoData = google.visualization.arrayToDataTable([
+                            ['Lat', 'Lon', 'Name'],
+                            [43.457850,-80.43650, 'Grand River Institute']]);
+
+                        var geoView = new google.visualization.DataView(geoData);
+
+                        var map =
+                            new google.visualization.Map(document.getElementById('map_div'));
+                        map.draw(geoView, {showTip: true});
+
+                        google.visualization.events.addListener(map, 'select',
+                            function() {
+                                table.setSelection(map.getSelection());
+                            });
+                    }
+                </script>
+
+                <div id="map_div" style="width: 100%; height: 100%;"></div>
+            </section>
+            <div data-role="content" class="border">
+                <!--<img src="img/vote.png" alt="VoteIcon" class="icon" height="50%" width="50%"/>-->
+                <h3>Grand River College Institute</h3>
+                <p>Address: 175 Indian Rd. Kitchener, ON N2B 2S7</p>
+                <p>Phone: 519-576-5100</p>
+
+            </div>
+            <div data-role="panel" data-display="overlay" id="left-panel6" data-theme="b">
+                <ul data-role="listview" data-iconpos="left" data-theme="a">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li data-icon="home"><a href="#TKHomePage"  data-theme="a">Home</a></li>
+                    <li data-icon="user"><a href="#TKCandidatesPage"  data-theme="a">Candidates</a></li>
+                    <li data-icon="check"><a href="#TKAddFeedbackPage"  data-theme="a">Give Your Vote</a></li>
+                    <li data-icon="gear"><a href="#TKSettingsPage"  data-theme="a">Settings</a></li>
+                    <li data-icon="location"><a href="#TKContactPage" data-rel="close" data-theme="a">Contact</a></li>
+                    <li data-icon="info"><a href="#TKAboutPage"  data-theme="a">About</a></li>
+                </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+
+        <!--About page-->
+        <div id="TKAboutPage" data-role="page">
+            <div data-role="header" data-theme="b">
+                <h1>About</h1>
+                <a href="#left-panel5" data-icon="bars" data-iconpos="notext" data-shadow="true">
+                    Menu
+                </a>
+            </div>
+
+            <div data-role="content" class="border">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="50%" width="50%"/>
+                <h2>About Developer:</h2><br><br>
+                <p>I am student at ITID program at Conestoga College. This is my final project for Mobile App Course
+                    at fourth semester. I love to do coding and create mobile app!</p>
+                <p class="center">Please fee free to contact me if you have any suggestions!</p>
+                <a href="#" type="button" data-role="button" id="TKbtnPhoneNum"
+                   name="TKbtnPhoneNum" data-icon="phone">Call:123.456.7890</a>
+                <a href="mailto:tkhaleghi5062@conestogac.on.ca"  type="button" data-role="button" id="TKbtnEmail"
+                   name="TKbtnEmail" data-icon="mail">tkhaleghi5062@conestogac.on.ca</a>
+            </div>
+            <div data-role="panel" data-display="overlay" id="left-panel5" data-theme="b">
+                <ul data-role="listview" data-iconpos="left" data-theme="a">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li data-icon="home"><a href="#TKHomePage"  data-theme="a">Home</a></li>
+                    <li data-icon="user"><a href="#TKCandidatesPage"  data-theme="a">Candidates</a></li>
+                    <li data-icon="check"><a href="#TKAddFeedbackPage"  data-theme="a">Give Your Vote</a></li>
+                    <li data-icon="gear"><a href="#TKSettingsPage"  data-theme="a">Settings</a></li>
+                    <li data-icon="location"><a href="#TKContactPage"  data-theme="a">Contact</a></li>
+                    <li data-icon="info"><a href="#TKAboutPage" data-rel="close" data-theme="a">About</a></li>
+                </ul>
+            </div>
+            <footer data-role="footer" data-position="fixed" data-theme="b">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+
+        <!--Candidate1-->
+        <div id="TKCan1Page" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="20%" width="20%"/>
+                <h1>Jackson</h1>
+            </header>
+            <p style="margin-left: 20px"><a href="#TKCandidatesPage" data-rel="back" data-icon="back">Back</a></p>
+
+            <section data-role="content" class="border">
+                <img src="img/c1.jpg" width="30%" height="30%" class="center" atl="Thor">
+                <p>I am in grade 11. As you already know, I want to be one of our class representatives. Before I start,
+                    I would like to say good luck to my fellow candidates. Right now I am also running against the
+                    clock, so it's time I get started. I would like to represent our class as we begin our journey,
+                    to our graduation in 2022. I will be as dedicated as possible. As one of your class representatives
+                    , I will present your ideas to the student council as well as make my own contributions to the
+                    school.</p>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+        <!--Candidate2-->
+        <div id="TKCan2Page" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="20%" width="20%"/>
+                <h1>Mobina</h1>
+            </header>
+            <p style="margin-left: 20px"><a href="#TKCandidatesPage" data-rel="back" data-icon="back">Back</a></p>
+
+            <section data-role="content" class="border">
+                <img src="img/c2.jpg" width="30%" height="30%" class="center" atl="Mobina image">
+                <p>I believe I qualify to be one of our class representatives for a couple reasons. First of all, I am
+                    a committed and loyal person. I will take the time, whenever it is needed, to be an effective class
+                    representative, and make Maple Grove a better place. Second, I am also organized and responsible.
+                    I can honestly say that I will take your opinions and my own to the student council. I will also
+                    communicate to you anything you should know.</p>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+        <!--Candidate3-->
+        <div id="TKCan3Page" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="20%" width="20%"/>
+                <h1>Julia</h1>
+            </header>
+            <p style="margin-left: 20px"><a href="#TKCandidatesPage" data-rel="back" data-icon="back">Back</a></p>
+
+            <section data-role="content" class="border">
+                <img src="img/c3.jpg" width="30%" height="30%" class="center" atl="Mobina image">
+                <p>I would appreciate your vote for president. If elected, I will continue to fight for the things that
+                    are important to students, no matter how big or small they might be. Let's work together to make
+                    our stamp on this community and on the world.</p>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+        <div id="TKCan4Page" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <img src="img/vote.png" alt="VoteIcon" class="icon" height="20%" width="20%"/>
+                <h1>Nathan</h1>
+            </header>
+            <p style="margin-left: 20px"><a href="#TKCandidatesPage" data-rel="back" data-icon="back">Back</a></p>
+
+            <section data-role="content" class="border">
+                <img src="img/c4.jpg" width="30%" height="30%" class="center" atl="Mobina image">
+                <p>As your student council president, I vow to end all homework. Just kidding. I can't do that, but
+                    what I can do is be your voice with the school administration and work to make this the best year
+                    Sample High has ever had. I will introduce ideas for events, such as a weekly sock hop after high
+                    school basketball games and we'll work together to help the community through volunteer work and
+                    showing them just how dedicated the students at Williams are.</p>
+            </section>
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h3>&copy; 2019 Taraneh Khaleghi</h3>
+            </footer>
+        </div>
+
+    </body>
+</html>
